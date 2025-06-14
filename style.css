@@ -2,7 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
 /*? font-family: 'Playfair Display', serif; */
 
+/* variables  */
 :root {
+  --bg-color: #180f05;
   --main-color: #deab5f;
   --primary-color: #312e2e;
   --custom-font-family: "Playfair Display", serif;
@@ -11,18 +13,18 @@
 /* utility styles  */
 button {
   padding: 10px 30px;
+  color: #000;
   background: var(--main-color);
-  border: none;
-  cursor: pointer;
-  color: white;
   font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   transition: all 0.3s;
 }
 
 button:hover {
-  background-color: white;
-  color: black;
-  box-shadow: 3px 3px 5px red, -3px 0px 5px red;
+  background-color: #edb35c;
+  box-shadow: 0px 0px 5px white, 0px 0px 5px white;
 }
 
 /* resets  */
@@ -36,6 +38,7 @@ button:hover {
 
 body {
   background: #100e0f;
+  /* background: var(--bg-color); */
 }
 
 /* nav start  */
@@ -43,57 +46,73 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: #fff;
+  color: #c5c5c5;
   font-family: sans-serif;
-  padding-top: 15px;
-  height: 5rem;
+  padding: 15px 0;
+  height: 4rem;
+  background: #000;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  z-index: 5;
 }
 
 /* logo  */
-.logo a {
-  color: white;
+nav .logo {
+  color: #c5c5c5;
+  cursor: pointer;
 }
 
-li {
-  display: inline;
-}
-
-li a {
+nav .logo:hover {
   color: #fff;
-  margin-left: 40px;
-  padding-bottom: 5px;
-  transition: all 0.3s;
 }
 
-li a:hover {
+nav ul li {
+  display: inline;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #c5c5c5;
+  text-decoration: none;
+  padding-bottom: 2px;
+  margin-left: 40px;
+  /* transition: all 0.3s; */
+}
+
+nav ul li a:hover {
   border-bottom: 2px solid var(--main-color);
-  color: grey;
+  color: #fff;
 }
 /* nav end */
 
 /* header start  */
 .header {
-  background: url(images/pexels-nao-triponez-129207.jpg);
+  /* background: url(images/pexels-nao-triponez-129207.jpg); */
+  background: url(images/pexels-pixabay-266755.jpg);
+  /* filter: brightness(80%); */
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
-  font-family: "Playfair Display", serif;
+  font-family: var(--custom-font-family);
   font-weight: normal;
   /* flexbox  */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #5c3d10;
   /* position  */
-  position: relative;
   text-align: center;
+  position: relative;
 }
 
 .main-heading {
   /* position  */
   position: absolute;
-  top: 7rem;
+  top: 4rem;
   font-size: 4rem;
   word-spacing: 10px;
 }
@@ -101,7 +120,7 @@ li a:hover {
 .primary-heading {
   /* position */
   position: absolute;
-  bottom: 4rem;
+  bottom: 8rem;
   font-size: 4rem;
   word-spacing: 10px;
   margin-bottom: -40px;
@@ -110,18 +129,19 @@ li a:hover {
 .main-btn {
   /* position  */
   position: absolute;
-  bottom: 2rem;
-  padding: 10px 30px;
-  margin-top: 20px;
-  background: transparent;
-  background: var(--main-color);
+  bottom: 5rem;
+  margin-top: 2rem;
+  background: #5c3d10;
+  color: #fff;
   transform: translateY(60px);
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 /* header end */
 
 /* our-story section start  */
 #our-story {
-  /* height: 100vh; */
+  /* height: 80vh; */
   margin-top: 15%;
   /* flexbox  */
   display: flex;
@@ -163,6 +183,7 @@ li a:hover {
   color: #fff;
   font-family: sans-serif;
   line-height: 20px;
+  margin: 20px 0;
 }
 /* our-story section end  */
 
@@ -179,6 +200,24 @@ li a:hover {
 .img-2 {
   width: 400px;
   height: 400px;
+  background-position: center;
+  background-size: cover;
+}
+
+.img,
+.img-2,
+.card-img.img-one,
+.card-img.img-two,
+.card-img.img-three {
+  transition: all linear 0.3s;
+}
+
+.img:hover,
+.img-2:hover,
+.card-img.img-one:hover,
+.card-img.img-two:hover,
+.card-img.img-three:hover {
+  transform: rotate(45deg);
 }
 
 .title-two {
@@ -314,6 +353,6 @@ hr {
   font-family: sans-serif;
   text-align: center;
   margin-top: 20px;
-  /* margin-bottom: 10px; */
+  margin-bottom: -50px;
 }
 /* footer end */
